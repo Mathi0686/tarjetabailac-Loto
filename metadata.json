@@ -1,0 +1,6 @@
+{
+  "name": "Generador de Tarjetas de Bloqueo LOTO",
+  "description": "Generador interactivo de tarjetas de bloqueo y etiquetado (LOTO) para seguridad industrial con edición en vivo, foto y descarga a escala real 1:1 para Bailac.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

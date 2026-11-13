@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Exact 45-degree diagonal hazard stripes from image_ad9971ab.png using seamless PNG tile */
+  .hazard-stripes-bg {
+    background-color: #ffffff;
+    background-image: url('/hazard_stripes.png');
+    background-repeat: repeat;
+    background-size: 44px 44px;
+  }
+
+  /* Chamfered industrial card tag shape (13mm 45-degree angle top corners on 75x160mm) */
+  .card-chamfer {
+    clip-path: polygon(
+      17.3333% 0%,
+      82.6667% 0%,
+      100% 8.125%,
+      100% 100%,
+      0% 100%,
+      0% 8.125%
+    );
+  }
+}
+
+/* Typography custom settings */
+.font-hazard {
+  font-family: 'Barlow Condensed', 'Arial Black', Impact, -apple-system, sans-serif;
+  letter-spacing: 0.06em;
+}
+
+/* Real-size 1:1 print styling */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 15mm;
+  }
+
+  *, *:before, *:after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Hide all UI elements, toolbars, overlays, and buttons */
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+
+  /* Main cards container during print */
+  .cards-print-layout {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 12mm !important;
+    margin: 5mm auto !important;
+    padding: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .loto-card-print {
+    width: 75mm !important;
+    height: 160mm !important;
+    min-width: 75mm !important;
+    min-height: 160mm !important;
+    max-width: 75mm !important;
+    max-height: 160mm !important;
+    box-shadow: none !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
